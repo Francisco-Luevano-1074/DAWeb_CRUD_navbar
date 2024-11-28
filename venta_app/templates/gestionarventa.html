@@ -1,0 +1,98 @@
+            {% extends 'base.html'%}
+
+            {% block cuerpo %}
+            {% load static %}
+
+            <div class = "row"> <!--LA FILA-->
+                <div class = "col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--COLUMNA IZQUIERDA-->
+
+                <h1>Agregar Venta</h1>
+                <div class="card"> <!--LA TARJETA-->
+                    <div class="card-body">
+                        <form action='registrarVenta/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
+                            <div class='form-group'>
+                            <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
+                            placeholder="Codigo Venta" minlenght="1" maxlenght="6" requiered>
+                            </div>
+
+                            <div class='form-group py-3'>
+                            <input type="text" id="txtempaque" name="txtempaque" class="form-control" 
+                            placeholder="Tipo de empaque" minlenght="1" maxlenght="100" requiered>
+                            </div>
+                                
+                            <div class='form-group py-3'>
+                            <input type="text" id="txtcontenido" name="txtcontenido" class="form-control" 
+                            placeholder="Contenido" minlenght="1" maxlenght="100" requiered>
+                            </div>
+
+                            <div class='form-group py-3'>
+                            <input type="text" id="txtdir_cliente" name="txtdir_cliente" class="form-control" 
+                            placeholder="Dirección Cliente" minlenght="1" maxlenght="100" requiered>
+                            </div>
+
+                            <div class='form-group py-3'>
+                            <input type="text" id="txttel_cliente" name="txttel_cliente" class="form-control" 
+                            placeholder="Teléfono del Cliente" minlenght="1" maxlenght="100" requiered>
+                            </div>
+
+                            <div class='form-group py-3'>
+                            <input type="text" id="txtnom_cliente" name="txtnom_cliente" class="form-control" 
+                            placeholder="Nombre del Cliente" minlenght="1" maxlenght="100" requiered>
+                            </div>
+
+                            <div class='form-group py-3'>
+                            <input type="text" id="txttotal" name="txttotal" class="form-control" 
+                            placeholder="Total" minlenght="1" maxlenght="100" requiered>
+                            </div>
+                            
+                            <div class='form-group py-2'>
+                            <button type="submit" class="btn btn-primary">Guardar Venta</button>
+                            </div>
+                            </form>
+                    </div>
+                </div> <!--LA TARJETA-->
+                        
+
+                </div> <!--COLUMNA IZQUIERDA-->
+
+                <div class = "col-sm-12 col-md-8 col-lg-4 col-xl-8"> <!--COLUMNA DERECHA-->
+
+                <h1>Listado de Ventas</h1>
+                <img class="w-50" src="{%static 'img/venta.jpg'%}" alt"luevano" width="400" height="400">
+                <br>
+                <br>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col">Empaque</th>
+                        <th scope="col">Dirección del Cliente</th>
+                        <th scope="col">Teléfono del Cliente</th>
+                        <th scope="col">Nombre del Cliente</th>
+                        <th scope="col">Total</th>
+
+                        <th>Opciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for v in misventas %}
+                        <tr>
+                            <td> {{forloop.counter}} </td>
+                            <td> {{v.codigo}} </td>
+                            <td> {{v.empaque}} </td>
+                            <td> {{v.dir_cliente}} </td>
+                            <td> {{v.tel_cliente}} </td>
+                            <td> {{v.nom_cliente}} </td>
+                            <td> {{v.total}} </td>
+
+                            <td> <a href="seleccionarVenta/{{v.codigo}}" class="btn btn-info">Editar</a> </td><!--FALTA CÓDIGO-->
+                            <td> <a href="borrarVenta/{{v.codigo}}" class="btn btn-danger">Borrar</a> </td><!--FALTA CÓDIGO-->
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                </div> <!--COLUMNA DERECHA-->
+
+            {% endblock %}
