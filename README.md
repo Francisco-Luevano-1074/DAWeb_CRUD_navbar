@@ -4,6 +4,7 @@ CRUD de varias app de cafetería en Django Python
 ![image](https://github.com/user-attachments/assets/10bcf92d-c2ac-4870-8022-67974408c47f)
 # App cliente
 ![image](https://github.com/user-attachments/assets/485f015e-ed32-4cfd-984f-1c038baa6b95)
+![image](https://github.com/user-attachments/assets/e61cbbea-99bb-44cd-b57b-cfbbe5958571)
 
 # App orden
 ![image](https://github.com/user-attachments/assets/b700e47b-7513-45b1-9b3e-c19fb122ae16)
