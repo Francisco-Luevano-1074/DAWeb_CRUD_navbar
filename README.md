@@ -1,32 +1,34 @@
 # DAWeb_CRUD_navbar
 CRUD de varias app de cafetería en Django Python
 # Panel Inicial
-![image](https://github.com/user-attachments/assets/bfdec286-6aa5-4fe9-86b6-3d7358df7890)
+![image](https://github.com/user-attachments/assets/44307ca0-cd6d-49f8-afcc-03a285c8e093)
 
 # App Cliente
-![image](https://github.com/user-attachments/assets/e56018a4-6a4d-41aa-ac87-8c0dbf310654)
-![image](https://github.com/user-attachments/assets/a88a0aa5-6641-4f7e-bf7e-d26d0948d046)
+![image](https://github.com/user-attachments/assets/04698270-054a-43cc-ae6c-7ae86b9927b6)
+![image](https://github.com/user-attachments/assets/c4e3b255-b341-468a-81f9-cdaab69299f1)
 
 # App Orden
-![image](https://github.com/user-attachments/assets/a5184175-445d-4078-8cfe-fb4ae5cd46f1)
-![image](https://github.com/user-attachments/assets/d563c080-a1ca-4532-bd0b-261f715ef964)
+![image](https://github.com/user-attachments/assets/d65f0200-02b0-4bed-91c0-969afcb95c81)
+![image](https://github.com/user-attachments/assets/80aaa980-8f7f-465a-b66b-014be9e48994)
 
 # App Mesa
-![image](https://github.com/user-attachments/assets/fc1899a8-488d-4074-8779-716b17ac1a4c)
-![image](https://github.com/user-attachments/assets/c53c1953-7664-4292-bc84-ebf227889b64)
+![image](https://github.com/user-attachments/assets/c1337676-ae8c-4ec7-b467-3022c668872f)
+![image](https://github.com/user-attachments/assets/3cbaf145-bd7c-4cff-9676-77a517fd4d4a)
 
 # App Gato
-![image](https://github.com/user-attachments/assets/d07065d9-3b78-4456-8387-d19a34e865c5)
-![image](https://github.com/user-attachments/assets/c8990bb9-573a-43e2-899d-f9a70cdcaa59)
+![image](https://github.com/user-attachments/assets/18b85198-f2ff-4ec8-8727-e4184a0e351d)
+![image](https://github.com/user-attachments/assets/1f77a6ac-27ae-4fa6-af1f-6da005959229)
 
 # App Venta
-![image](https://github.com/user-attachments/assets/1498da84-8c9d-4cd9-8d3f-4d7f2ddb557b)
-![image](https://github.com/user-attachments/assets/e49bf9f3-ce9c-4f54-a43c-d69d743e00ef)
+![image](https://github.com/user-attachments/assets/9f32b900-5de3-4aeb-971a-4a972f7d357c)
+![image](https://github.com/user-attachments/assets/b40ad089-ead6-48b7-93b5-d3ab3afc6023)
 
 # App Producto
-![image](https://github.com/user-attachments/assets/527a1349-0044-4fd5-8805-0b0930b61181)
-![image](https://github.com/user-attachments/assets/ffafb852-cd03-4bb8-8049-7ca85bf59095)
+![image](https://github.com/user-attachments/assets/840ba287-de42-49d1-b2b7-9fcc8fd439b6)
+![image](https://github.com/user-attachments/assets/efb14967-a060-4bc3-9e26-b55e776b2bc4)
 
 # App Empleado
-![image](https://github.com/user-attachments/assets/09058375-a01b-4802-bfe7-c5d0d4290386)
-![image](https://github.com/user-attachments/assets/186f8566-8d8c-4b17-a0ed-d2f261bfe00d)
+![image](https://github.com/user-attachments/assets/4269c72c-a3f1-42fb-b75b-02f40b6df397)
+![image](https://github.com/user-attachments/assets/1fb45d5d-b643-4953-8bee-bba8f0453614)
+
+
