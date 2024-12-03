@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar Venta</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarVenta/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="txtcodigo" value="{{ misventas.codigo }}">
+
+                    <div class='form-group'>
+                        <input type="text" id="txtid_empleado" name="txtid_empleado" class="form-control" 
+                        value="{{ misventas.id_empleado }}" placeholder="Id del empleado" required>
+                    </div>
+
+                    <div class='form-group'>
+                        <input type="text" id="txtid_cliente" name="txtid_cliente" class="form-control" 
+                        value="{{ misventas.id_cliente }}" placeholder="ID del cliente" required>
+                    </div>
+
+                    <div class='form-group'>
+                        <input type="text" id="txtid_producto" name="txtid_producto" class="form-control" 
+                        value="{{ misventas.id_producto }}" placeholder="Id del producto" required>
+                    </div>
+
+                    <div class='form-group'>
+                        <input type="date" id="txtfecha_venta" name="txtfecha_venta" class="form-control" 
+                        value="{{ misventas.fecha_venta }}" placeholder="Fecha" required>
+                    </div>
+                    
+                    <div class='form-group'>
+                        <input type="text" id="txtempaque" name="txtempaque" class="form-control" 
+                        value="{{ misventas.empaque }}" placeholder="Tipo de empaque" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtcontenido" name="txtcontenido" class="form-control"
+                        value="{{ misventas.contenido }}" placeholder="Contenido" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtdir_cliente" name="txtdir_cliente" class="form-control" 
+                        value="{{ misventas.dir_cliente }}" placeholder="Dirección Cliente" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txttel_cliente" name="txttel_cliente" class="form-control" 
+                        value="{{ misventas.tel_cliente }}" placeholder="Teléfono del Cliente" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtnom_cliente" name="txtnom_cliente" class="form-control" 
+                        value="{{ misventas.nom_cliente }}" placeholder="Nombre del Cliente" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txttotal" name="txttotal" class="form-control" 
+                        value="{{ misventas.total }}" placeholder="Total" required>
+                    </div>
+
+                    <div class='form-group py-2'>
+                        <button type="submit" class="btn btn-primary">Guardar Venta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
