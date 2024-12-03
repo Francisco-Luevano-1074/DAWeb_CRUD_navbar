@@ -1,7 +1,7 @@
 # DAWeb_CRUD_navbar
 CRUD de varias app de cafetería en Django Python
 # Panel Inicial
-![image](https://github.com/user-attachments/assets/e0a41297-902e-4a1f-9bcc-b3695f054985)
+![image](https://github.com/user-attachments/assets/bfdec286-6aa5-4fe9-86b6-3d7358df7890)
 
 # App Cliente
 ![image](https://github.com/user-attachments/assets/e56018a4-6a4d-41aa-ac87-8c0dbf310654)
