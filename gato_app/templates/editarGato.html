@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar Gato</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editargato/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="txtid_gato" value="{{ misgatos.id_gato }}">
+                    
+                    <div class='form-group'>
+                        <input type="text" id="txtid_venta" name="txtid_venta" class="form-control" 
+                        value="{{ misgatos.id_venta }}" placeholder="ID venta" required>
+                    </div>
+
+                    <div class='form-group'>
+                        <input type="text" id="txtid_orden" name="txtid_orden" class="form-control" 
+                        value="{{ misgatos.id_orden }}" placeholder="ID Orden" required>
+                    </div>
+
+                    <div class='form-group'>
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                        value="{{ misgatos.nombre }}" placeholder="nombre" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtedad" name="txtedad" class="form-control"
+                        value="{{ misgatos.edad }}" placeholder="edad" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtcolor" name="txtcolor" class="form-control" 
+                        value="{{ misgatos.color }}" placeholder="color" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtraza" name="txtraza" class="form-control" 
+                        value="{{ misgatos.raza }}" placeholder="raza" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtprecio" name="txtprecio" class="form-control" 
+                        value="{{ misgatos.precio }}" placeholder="precio" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtcaracteristica" name="txtcaracteristica" class="form-control" 
+                        value="{{ misgatos.caracteristica }}" placeholder="caracteristica" required>
+                    </div>
+
+                    <div class='form-group py-2'>
+                        <button type="submit" class="btn btn-primary">Guardar Gato</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

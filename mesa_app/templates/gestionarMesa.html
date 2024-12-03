@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+
+{% block cuerpo %}
+{% load static %}
+
+<div class = "row"> <!--LA FILA-->
+    <div class = "col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--COLUMNA IZQUIERDA-->
+
+    <h1>Agregar Mesa</h1>
+    <div class="card"> <!--LA TARJETA-->
+        <div class="card-body">
+            <form action='registrarmesa/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
+                <div class='form-group'>
+                <input type="text" id="txtid_mesa" name="txtid_mesa" class="form-control"
+                placeholder="Codigo Mesa" minlenght="1" maxlenght="6" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtubicacion" name="txtubicacion" class="form-control" 
+                placeholder="Ubicacion" minlenght="1" maxlenght="100" requiered>
+                </div>
+                    
+                <div class='form-group py-3'>
+                <input type="text" id="txttamaño" name="txttamaño" class="form-control" 
+                placeholder="tamaño" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtsillas" name="txtsillas" class="form-control" 
+                placeholder="Sillas" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtid_gato" name="txtid_gato" class="form-control" 
+                placeholder="ID del gato" minlenght="1" maxlenght="100" requiered>
+                </div>
+                
+                <div class='form-group py-2'>
+                <button type="submit" class="btn btn-primary">Guardar mesa</button>
+                </div>
+                </form>
+        </div>
+    </div> <!--LA TARJETA-->
+            
+
+    </div> <!--COLUMNA IZQUIERDA-->
+
+    <div class = "col-sm-12 col-md-8 col-lg-4 col-xl-8"> <!--COLUMNA DERECHA-->
+
+    <h1>Listado de mesas</h1>
+    <img class="w-50" src="{%static 'img/mesa.jpg'%}" alt"luevano" width="400" height="400">
+    <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">codigo</th>
+            <th scope="col">ubicacion</th>
+            <th scope="col">tamaño</th>
+            <th scope="col">sillas</th>
+            <th scope="col">ID gato</th>
+
+            <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for v in mismesas %}
+            <tr>
+                <td> {{forloop.counter}} </td>
+                <td> {{v.id_mesa}} </td>
+                <td> {{v.ubicacion}} </td>
+                <td> {{v.tamaño}} </td>
+                <td> {{v.sillas}} </td>
+                <td> {{v.id_gato}} </td>
+                
+
+                <td> <a href="seleccionarmesa/{{v.id_mesa}}" class="btn btn-info">Editar</a> </td><!--FALTA CÓDIGO-->
+                <td> <a href="borrarmesa/{{v.id_mesa}}" class="btn btn-danger">Borrar</a> </td><!--FALTA CÓDIGO-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div> <!--COLUMNA DERECHA-->
+
+{% endblock %}
