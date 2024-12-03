@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar Orden</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarorden/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="txtcodigo" value="{{ mismesas.codigo }}">
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtid_empleado" name="txtid_empleado" class="form-control"
+                        value="{{ misordenes.id_empleado }}" placeholder="Id empleado" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtid_cliente" name="txtid_cliente" class="form-control"
+                        value="{{ misordenes.id_cliente }}" placeholder="Id cliente" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtid_producto" name="txtid_producto" class="form-control"
+                        value="{{ misordenes.id_producto }}" placeholder="Id producto" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtid_mesa" name="txtid_mesa" class="form-control"
+                        value="{{ misordenes.id_mesa }}" placeholder="Id mesa" required>
+                    </div>
+                    
+                    <div class='form-group'>
+                        <input type="text" id="txtproductos" name="txtproductos" class="form-control" 
+                        value="{{ misordenes.productos }}" placeholder="Productos" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtmesa" name="txtmesa" class="form-control"
+                        value="{{ misordenes.mesa }}" placeholder="mesa" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtnom_cliente" name="txtnom_cliente" class="form-control" 
+                        value="{{ misordenes.nom_cliente }}" placeholder="Nombre Cliente" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txttipo" name="txttipo" class="form-control" 
+                        value="{{ misordenes.tipo }}" placeholder="Tipo de Orden" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtcosto" name="txtcosto" class="form-control" 
+                        value="{{ misordenes.costo }}" placeholder="Costo" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txthora" name="txthora" class="form-control" 
+                        value="{{ misordenes.hora }}" placeholder="hora" required>
+                    </div>
+
+                    <div class='form-group py-2'>
+                        <button type="submit" class="btn btn-primary">Guardar Orden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
