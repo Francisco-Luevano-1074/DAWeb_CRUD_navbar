@@ -1,0 +1,101 @@
+{% extends 'base.html'%}
+
+{% block cuerpo %}
+{% load static %}
+
+<div class = "row"> <!--LA FILA-->
+    <div class = "col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--COLUMNA IZQUIERDA-->
+
+    <h1>Agregar Producto</h1>
+    <div class="card"> <!--LA TARJETA-->
+        <div class="card-body">
+            <form action='registrarproducto/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
+                <div class='form-group'>
+                <input type="text" id="txtid_producto" name="txtid_producto" class="form-control"
+                placeholder="Codigo" minlenght="1" maxlenght="6" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                placeholder="nombre" minlenght="1" maxlenght="100" requiered>
+                </div>
+                    
+                <div class='form-group py-3'>
+                <input type="text" id="txtproveedor" name="txtproveedor" class="form-control" 
+                placeholder="proveedor" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtcantidad" name="txtcantidad" class="form-control" 
+                placeholder="cantidad" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtpeso" name="txtpeso" class="form-control" 
+                placeholder="peso" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txttamaño_empaque" name="txttamaño_empaque" class="form-control" 
+                placeholder="tamaño_empaque" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtcosto" name="txtcosto" class="form-control" 
+                placeholder="costo" minlenght="1" maxlenght="100" requiered>
+                </div>
+                
+                <div class='form-group py-2'>
+                <button type="submit" class="btn btn-primary">Guardar Productos</button>
+                </div>
+                </form>
+        </div>
+    </div> <!--LA TARJETA-->
+            
+
+    </div> <!--COLUMNA IZQUIERDA-->
+
+    <div class = "col-sm-12 col-md-8 col-lg-4 col-xl-8"> <!--COLUMNA DERECHA-->
+
+    <h1>Listado de Productos</h1>
+    <img class="w-50" src="{%static 'img/producto.jpg'%}" alt"luevano" width="400" height="400">
+    <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">nombre</th>
+            <th scope="col">proveedor</th>
+            <th scope="col">cantidad</th>
+            <th scope="col">peso</th>
+            <th scope="col">tamaño_empaque</th>
+            <th scope="col">costo</th>
+
+            <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for v in misproductos %}
+            <tr>
+                <td> {{forloop.counter}} </td>
+                <td> {{v.id_producto}} </td>
+                <td> {{v.nombre}} </td>
+                <td> {{v.proveedor}} </td>
+                <td> {{v.cantidad}} </td>
+                <td> {{v.peso}} </td>
+                <td> {{v.tamaño_empaque}} </td>
+                <td> {{v.costo}} </td>
+
+
+                <td> <a href="seleccionarproducto/{{v.id_producto}}" class="btn btn-info">Editar</a> </td><!--FALTA CÓDIGO-->
+                <td> <a href="borrarproducto/{{v.id_producto}}" class="btn btn-danger">Borrar</a> </td><!--FALTA CÓDIGO-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div> <!--COLUMNA DERECHA-->
+
+{% endblock %}
