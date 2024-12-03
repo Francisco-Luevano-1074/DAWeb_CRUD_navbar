@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block cuerpo %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <h2>Editar Cliente</h2>
+        <div class="card">
+            <div class="card-body">
+                <form action="/editarempleado/" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="txtcodigo" value="{{ misempleados.codigo }}">
+                    
+                    <div class='form-group'>
+                        <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                        value="{{ misempleados.nombre }}" placeholder="nombre" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtapellido" name="txtapellido" class="form-control"
+                        value="{{ misempleados.apellido }}" placeholder="apellido" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtno_telefono" name="txtno_telefono" class="form-control" 
+                        value="{{ misempleados.no_telefono }}" placeholder="No de telefono" required>
+                    </div>
+
+                    <div class='form-group py-3'>
+                        <input type="text" id="txtemail" name="txtemail" class="form-control" 
+                        value="{{ misempleados.email }}" placeholder="email" required>
+                    </div>
+
+                    <div class='form-group py-2'>
+                        <button type="submit" class="btn btn-primary">Guardar Empleado</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
