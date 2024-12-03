@@ -1,0 +1,87 @@
+{% extends 'base.html'%}
+
+{% block cuerpo %}
+{% load static %}
+
+<div class = "row"> <!--LA FILA-->
+    <div class = "col-sm-12 col-md-4 col-lg-4 col-xl-4"> <!--COLUMNA IZQUIERDA-->
+
+    <h1>Agregar Cliente</h1>
+    <div class="card"> <!--LA TARJETA-->
+        <div class="card-body">
+            <form action='registrarcliente/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
+                <div class='form-group'>
+                <input type="text" id="txtid_cliente" name="txtid_cliente" class="form-control"
+                placeholder="Codigo Cliente" minlenght="1" maxlenght="6" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                placeholder="nombre" minlenght="1" maxlenght="100" requiered>
+                </div>
+                    
+                <div class='form-group py-3'>
+                <input type="text" id="txtapellido" name="txtapellido" class="form-control" 
+                placeholder="apellido" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtno_telefono" name="txtno_telefono" class="form-control" 
+                placeholder="No de telefono" minlenght="1" maxlenght="100" requiered>
+                </div>
+
+                <div class='form-group py-3'>
+                <input type="text" id="txtemail" name="txtemail" class="form-control" 
+                placeholder="email" minlenght="1" maxlenght="100" requiered>
+                </div>
+                
+                <div class='form-group py-2'>
+                <button type="submit" class="btn btn-primary">Guardar cliente</button>
+                </div>
+                </form>
+        </div>
+    </div> <!--LA TARJETA-->
+            
+
+    </div> <!--COLUMNA IZQUIERDA-->
+
+    <div class = "col-sm-12 col-md-8 col-lg-4 col-xl-8"> <!--COLUMNA DERECHA-->
+
+    <h1>Listado de Clientes</h1>
+    <img class="w-50" src="{%static 'img/cliente.jpg'%}" alt"luevano" width="400" height="400">
+    <br>
+    <br>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Codigo</th>
+            <th scope="col">nombre</th>
+            <th scope="col">apellido</th>
+            <th scope="col">no de telefono</th>
+            <th scope="col">email</th>
+
+            <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for v in misclientes %}
+            <tr>
+                <td> {{forloop.counter}} </td>
+                <td> {{v.id_cliente}} </td>
+                <td> {{v.nombre}} </td>
+                <td> {{v.apellido}} </td>
+                <td> {{v.no_telefono}} </td>
+                <td> {{v.email}} </td>
+
+
+                <td> <a href="seleccionarcliente/{{v.id_cliente}}" class="btn btn-info">Editar</a> </td><!--FALTA CÓDIGO-->
+                <td> <a href="borrarcliente/{{v.id_cliente}}" class="btn btn-danger">Borrar</a> </td><!--FALTA CÓDIGO-->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    </div> <!--COLUMNA DERECHA-->
+
+{% endblock %}
